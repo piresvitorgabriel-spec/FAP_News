@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realizar login</title>
+    
+    <style>
+
+        .Registro{
+            color: cadetblue;
+            font-size: 80%;
+
+
+        }
+
+        h1 {
+            position: absolute;
+            top: 60px;
+            color: white;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5)
+        }
+     
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100vh;
+            background: radial-gradient(circle at top, #1a1f3a, #0b0f1d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 280px;
+            padding: 30px 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(6px);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        input{
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            font-size: 13px;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .termos {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 12px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: 0.3s;
+         }
+
+         button:hover {
+            background: rgba(255, 255, 255, 0.25);
+         }
+
+        .sucesso {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 6px;
+            background: rgba(0, 255, 0, 0.2);
+            color: #00ff55;
+            font-weight: bold;
+            border: 1px solid rgba(0, 255, 0, 0.4);
+            opacity: 0;
+        }
+
+        .erro {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 6px;
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff4d4d;
+            font-weight: bold;
+            border: 1px solid rgba(255, 0, 0, 0.4);
+        }
+
+        .animar {
+            animation: aparecerSucesso 0.5s ease forwards;
+        }
+
+        @keyframes aparecerSucesso {
+            0% {
+                opacity: 0;
+                transform: translateY(15px) scale(0.95);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0px) scale(1);
+            }
+        }
+         
+    </style>
+</head>
+
+<body>
+    <h1 class="titulo">LOGIN</h1>
+    <div class="container">
+        <div class="box">
+            <input type="email" id="email"   placeholder="Email">
+            <input type="password" id="senha" placeholder="senha">
+            <input type="password" id="confirmar" placeholder="Confirmar senha">
+       
+        <div> <a id="Registro" class="Registro" href="registro.html"> Não possui conta? fazer cadastro</a>
+
+
+        </div>
+            <div class="termos">
+                <input type="checkbox" id="termos">
+                <label for="termos">eu concordo com os termos</label>
+            </div> 
+    
+            <button onclick="registrar()">Fazer login</button>
+    
+            <div id="sucesso" class="sucesso">
+                login realizado com sucesso!
+            </div>
+
+            <div id="erro" class="erro">
+                preencha todos os campos e aceite os termos!
+            </div>
+        </div>
+    </div>
+
+    <script>
+       function registrar() {
+            
+            let email = document.getElementById("email").value; 
+            let senha = document.getElementById("senha").value;
+            let confirmar = document.getElementById("confirmar").value;
+
+            let termos = document.getElementById("termos").checked;
+
+            let sucesso = document.getElementById("sucesso");
+            let erro = document.getElementById("erro");
+
+            sucesso.style.display = "none";
+            erro.style.display = "none";
+
+            if (email === "" || senha === "" || confirmar === "") {
+                erro.innerHTML = "preencha todos os campos!";
+                erro.style.display = "block";
+                return;
+            }
+
+            if (senha !== confirmar) {
+                erro.innerHTML = "as senhas não coincidem!";
+                erro.style.display = "block";
+                return;
+            }
+
+            if (termos === false) {
+                erro.innerHTML = "você deve aceitar os termos!";
+                erro.style.display = "block";
+                return;
+            }
+ 
+            sucesso.style.display = "block";
+            sucesso.classList.remove("animar");
+            void sucesso.offsetWidth;
+            sucesso.classList.add("animar");
+
+            setTimeout(() => {
+                window.location.href = "site.html";
+            }, 900);
+       
+        }
+    </script>
+</body>
+</html>

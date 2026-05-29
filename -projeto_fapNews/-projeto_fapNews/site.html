@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FAP NEWS</title>
+
+    <style>
+
+        /* RESET */
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background-color: #0b0f1d;
+            color: white;
+        }
+
+        /* HEADER */
+
+        header{
+            background-color: rgba(255,255,255,0.05);
+            padding: 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+        }
+
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .logo img{
+            width: 90px;
+        }
+
+        .logo span{
+            color: cadetblue;
+        }
+
+        nav ul{
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a{
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+
+        nav a:hover{
+            color: cadetblue;
+        }
+
+        /* HERO */
+
+        .hero{
+            height: 100vh;
+
+            background-image: 
+            linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+            url('BaseCamp.jpeg');
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+
+            padding: 40px;
+        }
+
+        .hero-text{
+            max-width: 600px;
+        }
+
+        .tag{
+            background-color: cadetblue;
+            padding: 8px 15px;
+            border-radius: 5px;
+
+            font-size: 12px;
+        }
+
+        .hero h1{
+            font-size: 50px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .hero p{
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 30px;
+        }
+
+        .btn{
+            background-color: cadetblue;
+            color: white;
+
+            text-decoration: none;
+
+            padding: 12px 25px;
+            border-radius: 5px;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover{
+            background-color: rgb(65, 122, 124);
+        }
+
+        /* NOTÍCIAS */
+
+        .noticias{
+            padding: 50px;
+        }
+
+        .titulo{
+            font-size: 35px;
+            margin-bottom: 30px;
+        }
+
+        .cards{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+            gap: 20px;
+        }
+
+        .card{
+            background-color: rgba(255,255,255,0.05);
+            border-radius: 10px;
+        }
+
+        .imagem{
+            height: 220px;
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .img1{
+            background-image: url('time masculino 7Cup.jpeg');
+        }
+
+        .img2{
+            background-image: url('time feminino 7Cup.jpeg');
+        }
+
+        .img3{
+            background-image: url('Ativa+Rematricula_Fap.jpeg');
+        }
+
+        .conteudo{
+            padding: 20px;
+        }
+
+        .data{
+            color: cadetblue;
+            font-size: 13px;
+        }
+
+        .conteudo h3{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .conteudo p{
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* FOOTER */
+
+        footer{
+            background-color: rgba(255,255,255,0.05);
+            text-align: center;
+
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .menu{
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+        }
+
+        .menu a{
+            text-decoration: none;
+            color: rgba(255,255,255,0.7);
+            padding: 14px;
+            border-radius: 8px;
+            transition: 0.3s;
+            background: rgba(255,255,255,0.03);
+        }
+
+        /* RESPONSIVO */
+
+        @media(max-width: 768px){
+
+            header{
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul{
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1{
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            <img src="logo__FAP-removebg-preview.png">
+            <span>NEWS</span>
+        </div>
+
+       
+
+        <div class="menu">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="#">Eventos</a>
+            <a href="#">Atlética</a>
+            <a href="login.html">Login</a>
+        </div>
+
+       
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <p class="tag">
+                Notícia de hoje
+            </p>
+
+            <h1>
+                BaseCamp promete ser o maior evento do ano
+            </h1>
+
+            <p>
+                Evento da Igreja Adventista do Sétimo Dia que reúne milhares de jovens
+                para momentos de aprendizado, adoração e comunhão.
+            </p>
+
+            <a href="#" class="btn">
+                Ler mais
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- NOTÍCIAS -->
+
+    <section class="noticias">
+
+        <h2 class="titulo">
+            Últimas Notícias
+        </h2>
+
+        <div class="cards">
+
+            <!-- CARD 1 -->
+
+            <div class="card">
+
+                <div class="imagem img1"></div>
+
+                <div class="conteudo">
+
+                    <span class="data">
+                        24 Maio 2026
+                    </span>
+
+                    <h3>
+                        Espanha campeã masculina da 7Cup
+                    </h3>
+
+                    <p>
+                        Confira a escalação do time campeão do torneio.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="card">
+
+                <div class="imagem img2"></div>
+
+                <div class="conteudo">
+
+                    <p class="data">
+                        24 Maio 2026
+                    </p>
+
+                    <h3>
+                        Brasil campeão feminino da 7Cup
+                    </h3>
+
+                    <p>
+                        Veja os destaques da final feminina do campeonato.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="card">
+
+                <div class="imagem img3"></div>
+
+                <div class="conteudo">
+
+                    <p class="data">
+                        25 Maio 2026
+                    </p>
+
+                    <h3>
+                        Campanha de rematrícula faz sucesso
+                    </h3>
+
+                    <p>
+                        A campanha trouxe descontos especiais e benefícios aos alunos.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 FAP NEWS - Todos os direitos reservados
+        </p>
+
+    </footer>
+
+</body>
+</html>

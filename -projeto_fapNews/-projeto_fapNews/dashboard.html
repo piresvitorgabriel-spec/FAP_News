@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard FAP NEWS</title>
+
+    <style>
+
+        /* RESET */
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background-color: #0b0f1d;
+            color: white;
+
+            display: flex;
+
+            min-height: 100vh;
+        }
+
+        /* SIDEBAR */
+
+        .sidebar{
+            width: 250px;
+
+            background-color: rgba(255,255,255,0.05);
+
+            padding: 20px;
+        }
+
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-bottom: 30px;
+
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .logo img{
+            width: 50px;
+        }
+
+        .logo span{
+            color: cadetblue;
+        }
+
+        .menu{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .menu a{
+            text-decoration: none;
+
+            color: white;
+
+            background-color: rgba(255,255,255,0.05);
+
+            padding: 12px;
+            border-radius: 8px;
+
+            transition: 0.3s;
+        }
+
+        .menu a:hover{
+            background-color: cadetblue;
+        }
+
+        /* MAIN */
+
+        .main{
+            flex: 1;
+            padding: 30px;
+        }
+
+        .topo{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 30px;
+        }
+
+        .topo h1{
+            font-size: 35px;
+        }
+
+        .usuario{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .usuario img{
+            width: 45px;
+            height: 45px;
+
+            border-radius: 50%;
+        }
+
+        /* CARDS */
+
+        .cards{
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+
+            gap: 20px;
+
+            margin-bottom: 30px;
+        }
+
+        .card{
+            background-color: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 10px;
+        }
+            
+        .card h2{
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .card p{
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* TABELA */
+
+        .tabela-box{
+            background-color: rgba(255,255,255,0.05);
+
+            padding: 20px;
+
+            border-radius: 10px;
+        }
+
+        .tabela-box h2{
+            margin-bottom: 20px;
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td{
+            padding: 15px;
+            text-align: left;
+
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        th{
+            color: cadetblue;
+        }
+
+        .status{
+            background-color: rgba(0,255,100,0.2);
+
+            color: #00ff88;
+
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+        }
+
+        button{
+            padding: 8px 15px;
+
+            border: none;
+            border-radius: 5px;
+
+            background-color: cadetblue;
+
+            color: white;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        button:hover{
+            background-color: rgb(67, 120, 122);
+        }
+
+        /* RESPONSIVO */
+
+        @media(max-width: 900px){
+
+            body{
+                flex-direction: column;
+            }
+
+            .sidebar{
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+
+            <img src="logo__FAP-removebg-preview.png">
+
+            <span>NEWS</span>
+
+        </div>
+
+        <div class="menu">
+            <a href="#">🏠 Dashboard</a>
+            <a href="#">📰 Notícias</a>
+            <a href="#">📊 Estatísticas</a>
+            <a href="#">👥 Usuários</a>
+            <a href="#">⚙ Configurações</a>
+            <a href="site.html">🚪 Sair</a>
+
+        </div>
+
+    </div>
+
+    <!-- MAIN -->
+
+    <div class="main">
+
+        <!-- TOPO -->
+
+        <div class="topo">
+
+            <h1>
+                Painel Administrativo
+            </h1>
+
+            <div class="usuario">
+
+                <img src="sem-usuario.webp">
+
+                <p>
+                    Administrador
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- CARDS -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h2>838</h2>
+
+                <p>
+                    Visualizações
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>67</h2>
+
+                <p>
+                    Notícias Publicadas
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>918</h2>
+
+                <p>
+                    Usuários Ativos
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>42%</h2>
+
+                <p>
+                    Crescimento
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- TABELA -->
+
+        <div class="tabela-box">
+
+            <h2>
+                Últimas Notícias
+            </h2>
+
+            <table>
+
+                <tr>
+
+                    <th>Título</th>
+
+                    <th>Categoria</th>
+
+                    <th>Status</th>
+
+                    <th>Ação</th>
+
+                </tr>
+
+                <tr>
+
+                    <td>Espanha campeã masculina</td>
+
+                    <td>Atlética</td>
+
+                    <td>
+                        <span class="status">
+                            Publicado
+                        </span>
+                    </td>
+
+                    <td>
+                        <button>
+                            Editar
+                        </button>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Brasil campeão feminino</td>
+
+                    <td>Atlética</td>
+
+                    <td>
+                        <span class="status">
+                            Publicado
+                        </span>
+                    </td>
+
+                    <td>
+                        <button>
+                            Editar
+                        </button>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Campanha de rematrícula</td>
+
+                    <td>Eventos</td>
+
+                    <td>
+                        <span class="status">
+                            Publicado
+                        </span>
+                    </td>
+
+                    <td>
+                        <button>
+                            Editar
+                        </button>
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
